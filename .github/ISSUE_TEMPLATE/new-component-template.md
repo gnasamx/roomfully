@@ -9,5 +9,7 @@ assignees: gnasamx
 
 **Component name:** 
 
+Description:
+
 Design links:
 - [Name!](https://www.sketch.com)
