@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Box } from '@chakra-ui/react';
 import ComponentsPage from './ComponentsPage';
 import ComponentPage from './ComponentPage';
+import NotFoundPage from './NotFoundPage';
 
 const UiKitIndexPage = () => {
   return (
@@ -18,6 +19,7 @@ const Routes = () => {
       <Route exact path='/ui-kit/' component={UiKitIndexPage} />
       <Route exact path='/ui-kit/components/' component={ComponentsPage} />
       <Route exact path='/ui-kit/components/:id' component={ComponentPage} />
+      <Route component={NotFoundPage} />
     </Switch>
   );
 };

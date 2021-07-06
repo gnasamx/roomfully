@@ -1,11 +1,24 @@
+import { Box, Button, Code, Heading, Text } from '@chakra-ui/react';
 import * as React from 'react';
+import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
 import { useParams } from 'react-router-dom';
-import * as configs from './component-configs';
 import * as components from '../../components';
-import { Box, Heading, Code } from '@chakra-ui/react';
 import { camelCase, upperFirst } from '../../utils/strings';
+import * as configs from './component-configs';
 
-function ComponentExample({
+const ErrorFallback = ({ error, resetErrorBoundary }: FallbackProps) => {
+  return (
+    <Box role='alert'>
+      <Text>Something went wrong:</Text>
+      <Code>{error.message}</Code>
+      <Button variant='ghost' onClick={resetErrorBoundary}>
+        Try again
+      </Button>
+    </Box>
+  );
+};
+
+const ComponentExample = ({
   label,
   Component,
   props,
@@ -13,7 +26,7 @@ function ComponentExample({
   label: string;
   Component: any;
   props: any;
-}) {
+}) => {
   const stringify = (props: any) => {
     return JSON.stringify(
       props,
@@ -32,7 +45,9 @@ function ComponentExample({
         <h3>Example:</h3>
       </div>
       <div>
-        <Component {...props} />
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <Component {...props} />
+        </ErrorBoundary>
       </div>
       <details className='container my-5'>
         <Heading as='h3'>Config:</Heading>
@@ -42,7 +57,7 @@ function ComponentExample({
       </details>
     </>
   );
-}
+};
 
 const ComponentPage = () => {
   let { id }: { id: string } = useParams();
