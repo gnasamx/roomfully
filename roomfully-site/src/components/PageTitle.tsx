@@ -11,7 +11,7 @@ const PageTitle = memo(({ title }: PageTitleProps) => {
   const pageTitle = title ? `${title} – ${titleBase}` : titleBase;
 
   useEffect(() => {
-    window.document.title = decode(pageTitle);
+    document.title = decode(pageTitle);
   }, [pageTitle]);
 
   return null;

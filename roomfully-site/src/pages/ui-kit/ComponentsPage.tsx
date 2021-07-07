@@ -1,30 +1,32 @@
-import { Link } from 'react-router-dom';
-import { Box, Heading } from '@chakra-ui/react';
+import { Container, Heading, ListItem, UnorderedList } from '@chakra-ui/react';
 import * as React from 'react';
-import * as configs from './component-configs';
+import { Link } from 'react-router-dom';
+import { PageTitle } from '../../components';
 import { kebabCase } from '../../utils/strings';
+import * as configs from './component-configs';
 
 const ComponentsPage = () => {
-  console.log('Object.keys(configs): ', typeof configs);
   return (
-    <Box as='section'>
-      <Heading>Components</Heading>
-      <ul>
-        {Object.keys(configs)
-          ?.sort()
-          ?.map((name) => {
-            console.log('= 1 : ', kebabCase(name));
-            return (
-              <li key={name}>
-                <Link to={`/ui-kit/components/${kebabCase(name)}`}>
-                  {/* @ts-ignore */}
-                  {configs?.[name].name}
-                </Link>
-              </li>
-            );
-          })}
-      </ul>
-    </Box>
+    <>
+      <PageTitle title='Components' />
+      <Container as='section' maxW='container.xl'>
+        <Heading>Components</Heading>
+        <UnorderedList>
+          {Object.keys(configs)
+            ?.sort()
+            ?.map((name) => {
+              return (
+                <ListItem key={name}>
+                  <Link to={`/ui-kit/components/${kebabCase(name)}`}>
+                    {/* @ts-ignore */}
+                    {configs?.[name].name}
+                  </Link>
+                </ListItem>
+              );
+            })}
+        </UnorderedList>
+      </Container>
+    </>
   );
 };
 export default ComponentsPage;

@@ -4,12 +4,16 @@ import { Box } from '@chakra-ui/react';
 import ComponentsPage from './ComponentsPage';
 import ComponentPage from './ComponentPage';
 import NotFoundPage from './NotFoundPage';
+import { PageTitle } from '../../components';
 
 const UiKitIndexPage = () => {
   return (
-    <Box as='section'>
-      <Link to='/ui-kit/components/'>Components</Link>
-    </Box>
+    <>
+      <PageTitle title='Ui-Kit' />
+      <Box as='section'>
+        <Link to='/ui-kit/components/'>Components</Link>
+      </Box>
+    </>
   );
 };
 
