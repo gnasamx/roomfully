@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Box, Heading, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-import PageTitle from '../../components/PageTitle';
+import PageTitle from '../../components/page-title';
 
 const NotFoundPage = () => {
   return (
