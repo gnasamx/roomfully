@@ -1,5 +1,5 @@
-const ApartmentCard = {
-  name: 'Apartment Card',
+const PropertyCard = {
+  name: 'Property Card',
   examples: [
     {
       label: 'Default',
@@ -9,6 +9,7 @@ const ApartmentCard = {
           alt: 'Beautiful house interior',
         },
         name: 'Charming and comfortable house',
+        roomType: 'Private room',
         propertyType: 'Entire apartment in Istanbul',
         price: '$11',
         reviewPerMonth: 4.91,
@@ -18,4 +19,4 @@ const ApartmentCard = {
     },
   ],
 };
-export default ApartmentCard;
+export default PropertyCard;
