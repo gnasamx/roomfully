@@ -1,16 +1,16 @@
 import { decode } from 'he';
-import { useEffect, memo } from 'react';
+import * as React from 'react';
 import config from '../config.json';
 
 export interface PageTitleProps {
   title: string;
 }
 
-const PageTitle = memo(({ title }: PageTitleProps) => {
+const PageTitle: React.FC<PageTitleProps> = React.memo(({ title }) => {
   const titleBase = config.siteTitle || '';
   const pageTitle = title ? `${title} – ${titleBase}` : titleBase;
 
-  useEffect(() => {
+  React.useEffect(() => {
     document.title = decode(pageTitle);
   }, [pageTitle]);
 
