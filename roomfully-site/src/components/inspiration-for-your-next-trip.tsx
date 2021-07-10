@@ -34,10 +34,11 @@ const InspirationCard: React.FC<Inspiration> = ({
       <Box flexShrink={0}>
         <Image
           borderRadius='md'
-          width={20}
-          height={20}
+          width={16}
+          height={16}
           src={image.src}
           alt={image.alt}
+          loading='lazy'
         />
       </Box>
       <Box>

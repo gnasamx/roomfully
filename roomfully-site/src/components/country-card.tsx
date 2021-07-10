@@ -18,22 +18,23 @@ export interface CountryCardProps {
 const CountryCard: React.FC<CountryCardProps> = React.memo(
   ({ image, countryName, apartmentsCount, cta }) => {
     return (
-      <Flex
-        flexDirection='column'
-        boxShadow='md'
-        borderRadius='xl'
-        overflow='hidden'
-      >
+      <Flex flexDirection='column' borderRadius='xl' overflow='hidden'>
         <Image
           src={image.src}
           alt={image.alt}
           objectFit='cover'
           objectPosition='center'
+          loading='lazy'
         />
         <Box
           padding={5}
           alignItems='center'
           justifyContent='space-between'
+          borderColor='gray.200'
+          borderLeftWidth={1}
+          borderRightWidth={1}
+          borderBottomWidth={1}
+          borderBottomRadius='xl'
           width='full'
           height='full'
         >
