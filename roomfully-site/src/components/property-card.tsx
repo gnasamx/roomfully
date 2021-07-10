@@ -1,5 +1,5 @@
+import { Box, Flex, HStack, Image, SimpleGrid, Text } from '@chakra-ui/react';
 import * as React from 'react';
-import { Box, Image, Flex, Text, SimpleGrid, HStack } from '@chakra-ui/react';
 import { HiStar } from 'react-icons/hi';
 
 interface PropertyCardProps {

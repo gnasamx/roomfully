@@ -1,10 +1,10 @@
-import { Switch, Route, Link } from 'react-router-dom';
-import * as React from 'react';
 import { Box } from '@chakra-ui/react';
-import ComponentsPage from './components-page';
-import ComponentPage from './component-page';
-import NotFoundPage from './not-found-page';
+import * as React from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
 import { PageTitle } from '../../components';
+import ComponentPage from './component-page';
+import ComponentsPage from './components-page';
+import NotFoundPage from './not-found-page';
 
 const UiKitIndexPage = () => {
   return (

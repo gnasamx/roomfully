@@ -19,4 +19,5 @@ const PropertyCard = {
     },
   ],
 };
+
 export default PropertyCard;
