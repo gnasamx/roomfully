@@ -1,4 +1,4 @@
-import { Box, Button, Image, SimpleGrid, Text } from '@chakra-ui/react';
+import { Flex, Box, Button, Image, SimpleGrid, Text } from '@chakra-ui/react';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -15,53 +15,47 @@ export interface CountryCardProps {
   };
 }
 
-const CountryCard = ({
-  image,
-  countryName,
-  apartmentsCount,
-  cta,
-}: CountryCardProps) => {
-  return (
-    <Box
-      display='flex'
-      flexDirection='column'
-      boxShadow='md'
-      borderRadius='xl'
-      overflow='hidden'
-    >
-      <Image
-        src={image.src}
-        alt={image.alt}
-        objectFit='cover'
-        objectPosition='center'
-      />
-      <Box
-        padding={5}
-        alignItems='center'
-        justifyContent='space-between'
-        width='full'
-        height='full'
+const CountryCard: React.FC<CountryCardProps> = React.memo(
+  ({ image, countryName, apartmentsCount, cta }) => {
+    return (
+      <Flex
+        flexDirection='column'
+        boxShadow='md'
+        borderRadius='xl'
+        overflow='hidden'
       >
-        <SimpleGrid
-          templateColumns='1fr auto'
-          columnGap={4}
+        <Image
+          src={image.src}
+          alt={image.alt}
+          objectFit='cover'
+          objectPosition='center'
+        />
+        <Box
+          padding={5}
           alignItems='center'
+          justifyContent='space-between'
+          width='full'
+          height='full'
         >
-          <Box>
-            <Text fontWeight='medium' mb={1}>
-              {countryName}
-            </Text>
-            <Text fontSize='sm' color='gray.600'>
-              {apartmentsCount} apartments
-            </Text>
-          </Box>
-          <Button colorScheme='purple'>
-            <Link to={cta.url}>{cta.label}</Link>
-          </Button>
-        </SimpleGrid>
-      </Box>
-    </Box>
-  );
-};
+          <SimpleGrid
+            templateColumns='1fr auto'
+            columnGap={4}
+            alignItems='center'
+          >
+            <Box>
+              <Text fontWeight='semibold'>{countryName}</Text>
+              <Text fontSize='sm' color='gray.600'>
+                {apartmentsCount} apartments
+              </Text>
+            </Box>
+            <Button colorScheme='purple'>
+              <Link to={cta.url}>{cta.label}</Link>
+            </Button>
+          </SimpleGrid>
+        </Box>
+      </Flex>
+    );
+  }
+);
 
 export default CountryCard;
