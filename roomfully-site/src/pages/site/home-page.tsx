@@ -1,11 +1,13 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Link } from '@chakra-ui/react';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link as ReachLink } from 'react-router-dom';
 
 const HomePage = () => {
   return (
     <Box as='section'>
-      <Link to='/ui-kit'>Go to Ui-Kit</Link>
+      <Link as={ReachLink} to='/ui-kit'>
+        Go to Ui-Kit
+      </Link>
     </Box>
   );
 };

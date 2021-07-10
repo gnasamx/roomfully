@@ -14,6 +14,7 @@ const CountryCard = {
           url: '/country/spain',
           label: '$64 Avg Price',
         },
+        countryUrl: '#',
       },
     },
   ],

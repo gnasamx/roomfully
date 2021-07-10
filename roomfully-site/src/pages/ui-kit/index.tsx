@@ -1,6 +1,6 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Link } from '@chakra-ui/react';
 import * as React from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Link as ReachLink, Route, Switch } from 'react-router-dom';
 import { PageTitle } from '../../components';
 import ComponentPage from './component-page';
 import ComponentsPage from './components-page';
@@ -11,7 +11,9 @@ const UiKitIndexPage = () => {
     <>
       <PageTitle title='Ui-Kit' />
       <Box as='section'>
-        <Link to='/ui-kit/components/'>Components</Link>
+        <Link as={ReachLink} to='/ui-kit/components/'>
+          Components
+        </Link>
       </Box>
     </>
   );
