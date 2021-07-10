@@ -3,7 +3,8 @@ import * as React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
 import { Box, Text, Code } from '@chakra-ui/react';
-import UiKit from './pages/ui-kit/index';
+import UiKit from './pages/ui-kit';
+import Site from './pages/site';
 
 const ErrorFallback = ({ error, resetErrorBoundary }: FallbackProps) => {
   return (
@@ -27,6 +28,7 @@ const RouteSwitch = () => {
     >
       <Switch>
         <Route path='/ui-kit/' component={UiKit} />
+        <Route path='/' component={Site} />
       </Switch>
     </ErrorBoundary>
   );

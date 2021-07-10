@@ -1,1 +1,1 @@
-export { default as CountryCards } from './country-cards';
+export { default as CountryCard } from './country-card';

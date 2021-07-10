@@ -18,7 +18,7 @@ const ComponentExample = ({
 }) => {
   return (
     <Box mb={6}>
-      <Text>{label}</Text>
+      <Text mb={4}>{label}</Text>
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <Component {...props} />
       </ErrorBoundary>
