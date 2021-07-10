@@ -1,4 +1,3 @@
-export { default as Hello } from './Hello';
-export { default as SimpleImage } from './SimpleImage';
-export { default as PageTitle } from './PageTitle';
-export { default as ErrorFallback } from './ErrorFallback';
+export { default as PageTitle } from './page-title';
+export { default as ErrorFallback } from './error-fallback';
+export { default as CountryCard } from './country-card';

@@ -1,2 +1,1 @@
-export { default as Hello } from './Hello';
-export { default as SimpleImage } from './SimpleImage';
+export { default as CountryCard } from './country-card';
