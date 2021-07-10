@@ -43,9 +43,7 @@ const CountryCard: React.FC<CountryCardProps> = React.memo(
             alignItems='center'
           >
             <Box>
-              <Text fontWeight='medium' mb={1}>
-                {countryName}
-              </Text>
+              <Text fontWeight='semibold'>{countryName}</Text>
               <Text fontSize='sm' color='gray.600'>
                 {apartmentsCount} apartments
               </Text>
