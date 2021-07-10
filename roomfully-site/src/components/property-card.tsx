@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Box, Image, Flex, Text, SimpleGrid, HStack } from '@chakra-ui/react';
 import { HiStar } from 'react-icons/hi';
 
-interface ApartmentCardProps {
+interface PropertyCardProps {
   image: {
     src: string;
     alt: string;
@@ -15,7 +15,7 @@ interface ApartmentCardProps {
   listingUrl: string;
 }
 
-const ApartmentCard: React.FC<ApartmentCardProps> = React.memo(
+const PropertyCard: React.FC<PropertyCardProps> = React.memo(
   ({ image, name, propertyType, price, reviewPerMonth, numberOfReviews }) => {
     return (
       <Flex
@@ -65,4 +65,4 @@ const ApartmentCard: React.FC<ApartmentCardProps> = React.memo(
   }
 );
 
-export default ApartmentCard;
+export default PropertyCard;
