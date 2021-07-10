@@ -1,10 +1,9 @@
-import { Button, ChakraProvider, theme } from '@chakra-ui/react';
+import { Box, Button, ChakraProvider, Code, Text, theme } from '@chakra-ui/react';
 import * as React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
-import { Box, Text, Code } from '@chakra-ui/react';
-import UiKit from './pages/ui-kit';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Site from './pages/site';
+import UiKit from './pages/ui-kit';
 
 const ErrorFallback = ({ error, resetErrorBoundary }: FallbackProps) => {
   return (
