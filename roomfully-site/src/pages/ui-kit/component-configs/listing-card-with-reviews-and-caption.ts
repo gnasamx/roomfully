@@ -12,7 +12,7 @@ const ListingCardWithReviewsAndCaption = {
         propertyType: 'Apartment with Sea View',
         caption: 'You can cancel later, so lock in this great price today',
         price: 42,
-        reviewsPerMonth: 4.91,
+        reviewsScorePerMonth: 4.91,
         listingUrl: '#',
       },
     },

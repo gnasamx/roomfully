@@ -1,14 +1,7 @@
-import {
-  Box,
-  Grid,
-  HStack,
-  Image,
-  LinkBox,
-  SimpleGrid,
-  Text,
-} from '@chakra-ui/react';
+import { Box, Grid, Image, LinkBox, LinkOverlay, Text } from '@chakra-ui/react';
 import * as React from 'react';
-import { HiStar } from 'react-icons/hi';
+import { Link as ReachLink } from 'react-router-dom';
+import AbstractReviewsScore from './abstract-review';
 
 interface ListingCardWithReviewsAndCaptionProps {
   image: {
@@ -19,116 +12,71 @@ interface ListingCardWithReviewsAndCaptionProps {
   propertyType: string;
   caption: string;
   price: number;
-  reviewsPerMonth: number;
+  reviewsScorePerMonth: number;
   listingUrl: string;
 }
 
-function decideRatingAppearance(reviewsPerMonth: number) {
-  if (reviewsPerMonth > 4) {
-    return {
-      backgroundColor: 'green.300',
-      iconColor: 'white',
-      label: 'Excellent',
-    };
-  } else if (reviewsPerMonth > 3) {
-    return {
-      backgroundColor: 'yellow.300',
-      iconColor: 'white',
-      label: 'Good',
-    };
-  } else {
-    return {
-      backgroundColor: 'green.500',
-      iconColor: 'white',
-      label: 'Excellent',
-    };
-  }
-}
-
-function Rating({ reviewsPerMonth }: { reviewsPerMonth: number }) {
-  const { backgroundColor, iconColor, label } =
-    decideRatingAppearance(reviewsPerMonth);
-  return (
-    <HStack>
-      <Box
-        backgroundColor={backgroundColor}
-        w={6}
-        h={6}
-        borderRadius={6}
-        display='flex'
-        alignItems='center'
-        justifyContent='center'
-      >
-        <HiStar color={iconColor} />
-      </Box>
-      <Text fontSize='sm' fontWeight='semibold'>
-        {label}
-      </Text>
-    </HStack>
-  );
-}
-
 const ListingCardWithReviewsAndCaption: React.FC<ListingCardWithReviewsAndCaptionProps> =
-  ({
-    image,
-    name,
-    caption,
-    propertyType,
-    price,
-    reviewsPerMonth,
-    listingUrl,
-  }) => {
-    return (
-      <LinkBox>
-        <HStack
-          padding={2}
-          borderRadius={4}
-          borderColor='gray.200'
-          borderWidth={1}
-          spacing={4}
-          alignContent='space-between'
-        >
-          <Box flexShrink={0}>
-            <Image
-              borderRadius='md'
-              width={[24, null, 40]}
-              height={[24, null, 28]}
-              src={image.src}
-              alt={image.alt}
-              loading='lazy'
-            />
-          </Box>
-          <Grid templateRows='1fr auto' rowGap={[2, null, 3]} width='full'>
-            <Box overflow='hidden'>
-              <Text
-                fontWeight='semibold'
-                fontSize={['md', null, 'lg']}
-                isTruncated
-              >
-                {/* <LinkOverlay as={ReachLink} to={listingUrl}> */}
-                {name}
-                {/* </LinkOverlay> */}
-              </Text>
-              <Text fontSize='sm' color='gray.600' isTruncated>
-                {propertyType}
-              </Text>
-              <Text fontSize='sm' color='gray.600' isTruncated>
-                {caption}
-              </Text>
+  React.memo(
+    ({
+      image,
+      name,
+      caption,
+      propertyType,
+      price,
+      reviewsScorePerMonth,
+      listingUrl,
+    }) => {
+      return (
+        <LinkBox>
+          <Grid
+            padding={[4, null, 3]}
+            borderRadius='md'
+            borderColor='gray.200'
+            borderWidth={1}
+            templateColumns={['1fr', null, 'auto 1fr']}
+            gap={4}
+          >
+            <Box flexShrink={0}>
+              <Image
+                borderRadius='md'
+                width={['auto', null, 40]}
+                height={['auto', null, 28]}
+                src={image.src}
+                alt={image.alt}
+                loading='lazy'
+              />
             </Box>
-            <SimpleGrid templateColumns='1fr auto'>
-              <Rating reviewsPerMonth={reviewsPerMonth} />
-              <Box display='inline-flex'>
-                <Text fontSize='sm' color='gray.600'>
-                  from&nbsp;
+            <Grid templateRows='1fr auto' rowGap={3} width='full'>
+              <Box>
+                <Text fontWeight='semibold' fontSize='lg'>
+                  <LinkOverlay as={ReachLink} to={listingUrl}>
+                    {name}
+                  </LinkOverlay>
                 </Text>
-                <Text fontWeight='semibold'>${price}</Text>
+                <Text fontSize='sm' color='gray.600'>
+                  {propertyType}
+                </Text>
+                <Text fontSize='sm' color='gray.600'>
+                  {caption}
+                </Text>
               </Box>
-            </SimpleGrid>
+              <Grid templateColumns='1fr auto'>
+                <AbstractReviewsScore
+                  reviewsScorePerMonth={reviewsScorePerMonth}
+                />
+                <Box display='inline-flex'>
+                  <Text fontSize='sm' color='gray.600'>
+                    from&nbsp;
+                  </Text>
+                  <Text fontWeight='semibold'>${price}</Text>
+                </Box>
+              </Grid>
+            </Grid>
           </Grid>
-        </HStack>
-      </LinkBox>
-    );
-  };
+        </LinkBox>
+      );
+    }
+  );
 
 export default ListingCardWithReviewsAndCaption;
