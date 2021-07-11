@@ -1,11 +1,13 @@
-import { Box, Container, Heading, Text } from '@chakra-ui/react';
+import { Box, Heading, Text } from '@chakra-ui/react';
 import * as React from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { RouteComponentProps } from 'react-router-dom';
 import * as components from '../../components';
 import { ErrorFallback, PageTitle } from '../../components';
 import { camelCase, upperFirst } from '../../utils/strings';
-import * as configs from './component-configs';
+import * as atoms from './component-configs/atoms';
+import * as compounds from './component-configs/compounds';
+import * as molecules from './component-configs/molecules';
 
 const ComponentExample = ({
   label,
@@ -26,9 +28,8 @@ const ComponentExample = ({
   );
 };
 
-const ComponentPage = ({ match }: RouteComponentProps<{ id: string }>) => {
-  let id = match.params.id;
-  id = upperFirst(camelCase(id));
+const ComponentInstance = ({ configs, match }: any) => {
+  const id = upperFirst(camelCase(match.params.id));
   // @ts-ignore
   const config = configs[id];
   // @ts-ignore
@@ -42,8 +43,10 @@ const ComponentPage = ({ match }: RouteComponentProps<{ id: string }>) => {
   return (
     <>
       <PageTitle title={name} />
-      <Container as='section' maxW='container.xl'>
-        <Heading mb={3}>{title}</Heading>
+      <Heading as='h3' size='md'>
+        {title}
+      </Heading>
+      <Box as='section' maxW='container.xl'>
         {examples.map((example: any, i: number) => (
           <ComponentExample
             key={'component-example-' + i}
@@ -51,7 +54,17 @@ const ComponentPage = ({ match }: RouteComponentProps<{ id: string }>) => {
             {...example}
           />
         ))}
-      </Container>
+      </Box>
+    </>
+  );
+};
+
+const ComponentPage = ({ match }: RouteComponentProps<{ id: string }>) => {
+  return (
+    <>
+      <ComponentInstance configs={atoms} match={match} />
+      <ComponentInstance configs={molecules} match={match} />
+      <ComponentInstance configs={compounds} match={match} />
     </>
   );
 };
