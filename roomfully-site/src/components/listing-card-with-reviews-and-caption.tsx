@@ -91,16 +91,20 @@ const ListingCardWithReviewsAndCaption: React.FC<ListingCardWithReviewsAndCaptio
           <Box flexShrink={0}>
             <Image
               borderRadius='md'
-              width={40}
-              height={28}
+              width={[24, null, 40]}
+              height={[24, null, 28]}
               src={image.src}
               alt={image.alt}
               loading='lazy'
             />
           </Box>
-          <Grid templateRows='1fr auto' rowGap={3} width='full'>
+          <Grid templateRows='1fr auto' rowGap={[2, null, 3]} width='full'>
             <Box overflow='hidden'>
-              <Text fontWeight='semibold' fontSize='lg' isTruncated>
+              <Text
+                fontWeight='semibold'
+                fontSize={['md', null, 'lg']}
+                isTruncated
+              >
                 {/* <LinkOverlay as={ReachLink} to={listingUrl}> */}
                 {name}
                 {/* </LinkOverlay> */}
