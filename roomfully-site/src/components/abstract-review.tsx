@@ -19,8 +19,8 @@ const decideRatingAppearance = (reviewsScorePerMonth: number) => {
     };
   } else {
     return {
-      backgroundColor: 'green.500',
-      label: 'Excellent',
+      backgroundColor: 'pink.300',
+      label: 'Regular',
     };
   }
 };
