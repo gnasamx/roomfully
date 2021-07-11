@@ -12,7 +12,7 @@ const PropertyCard = {
         roomType: 'Private room',
         propertyType: 'Entire apartment in Istanbul',
         price: '$11',
-        reviewPerMonth: 4.91,
+        reviewsScorePerMonth: 4.91,
         numberOfReviews: 98,
         listingUrl: '#',
       },
