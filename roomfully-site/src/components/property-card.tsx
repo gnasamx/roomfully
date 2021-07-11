@@ -20,7 +20,7 @@ interface PropertyCardProps {
   name: string;
   propertyType: string;
   price: string;
-  reviewPerMonth: number;
+  reviewsScorePerMonth: number;
   numberOfReviews: number;
   listingUrl: string;
 }
@@ -31,7 +31,7 @@ const PropertyCard: React.FC<PropertyCardProps> = React.memo(
     name,
     propertyType,
     price,
-    reviewPerMonth,
+    reviewsScorePerMonth,
     numberOfReviews,
     listingUrl,
   }) => {
@@ -76,7 +76,7 @@ const PropertyCard: React.FC<PropertyCardProps> = React.memo(
               <HStack spacing={1}>
                 <HiStar color='tomato' />
                 <Text fontWeight='semibold' fontSize='sm'>
-                  {reviewPerMonth}
+                  {reviewsScorePerMonth}
                 </Text>
                 <Text fontSize='sm' color='gray.600'>
                   ({numberOfReviews})

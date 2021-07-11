@@ -42,6 +42,7 @@ A sample listing schema:
   "bathrooms_text": "1 shared bath",
   "bedrooms": 1,
   "beds": 1,
+  "guests": 2,
   "amenities": [
     "Smoke alarm",
     "Extra pillows and blankets",

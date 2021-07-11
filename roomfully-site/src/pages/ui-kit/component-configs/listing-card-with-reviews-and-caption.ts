@@ -1,5 +1,5 @@
-const PropertyCard = {
-  name: 'Property Card',
+const ListingCardWithReviewsAndCaption = {
+  name: 'Listing Card With Reviews And Caption',
   examples: [
     {
       label: 'Default',
@@ -9,15 +9,14 @@ const PropertyCard = {
           alt: 'Beautiful house interior',
         },
         name: 'Charming and comfortable house',
-        roomType: 'Private room',
-        propertyType: 'Entire apartment in Istanbul',
-        price: '$11',
+        propertyType: 'Apartment with Sea View',
+        caption: 'You can cancel later, so lock in this great price today',
+        price: 42,
         reviewsScorePerMonth: 4.91,
-        numberOfReviews: 98,
         listingUrl: '#',
       },
     },
   ],
 };
 
-export default PropertyCard;
+export default ListingCardWithReviewsAndCaption;
