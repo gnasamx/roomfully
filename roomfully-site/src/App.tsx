@@ -1,21 +1,10 @@
-import { Box, Button, ChakraProvider, Code, Text, theme } from '@chakra-ui/react';
+import { ChakraProvider, theme } from '@chakra-ui/react';
 import * as React from 'react';
-import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
+import { ErrorBoundary } from 'react-error-boundary';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { ErrorFallback } from './components';
 import Site from './pages/site';
 import UiKit from './pages/ui-kit';
-
-const ErrorFallback = ({ error, resetErrorBoundary }: FallbackProps) => {
-  return (
-    <Box role='alert'>
-      <Text>Something went wrong:</Text>
-      <Code>{error.message}</Code>
-      <Button variant='ghost' onClick={resetErrorBoundary}>
-        Try again
-      </Button>
-    </Box>
-  );
-};
 
 const RouteSwitch = () => {
   return (

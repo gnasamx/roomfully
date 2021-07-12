@@ -7,7 +7,7 @@ import { ErrorFallback, PageTitle } from '../../components';
 import { camelCase, upperFirst } from '../../utils/strings';
 import * as atoms from './component-configs/atoms';
 import * as compounds from './component-configs/compounds';
-import * as molecules from './component-configs/molecules';
+import * as molecules from './component-configs/compounds';
 
 const ComponentExample = ({
   label,
