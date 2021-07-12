@@ -52,7 +52,7 @@ const ComponentsPage = () => {
   return (
     <>
       <PageTitle title='Components' />
-      <Container as='section' maxW='container.xl'>
+      <Container as='section' maxW='container.xl' padding={4}>
         <Heading mb={4}>Components</Heading>
         <SimpleGrid columns={[1, null, 3]} spacing={4}>
           <ComponentsList type='Atoms' configs={atoms} />

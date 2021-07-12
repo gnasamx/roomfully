@@ -38,7 +38,7 @@ const ComponentInstance = ({ id, config, match }: any) => {
   const title = `${name}`;
 
   return (
-    <Container maxWidth='container.xl' padding={4}>
+    <>
       <PageTitle title={name} />
       <Heading as='h3' size='md' mb={4}>
         {title}
@@ -52,7 +52,7 @@ const ComponentInstance = ({ id, config, match }: any) => {
           />
         ))}
       </Box>
-    </Container>
+    </>
   );
 };
 
@@ -66,7 +66,7 @@ const ComponentPage = ({ match }: RouteComponentProps<{ id: string }>) => {
   const compoundsConfig = compounds[id];
 
   return (
-    <>
+    <Container maxW='container.xl' padding={4}>
       {atomsConfig && (
         <ComponentInstance id={id} config={atomsConfig} match={match} />
       )}
@@ -76,7 +76,7 @@ const ComponentPage = ({ match }: RouteComponentProps<{ id: string }>) => {
       {compoundsConfig && (
         <ComponentInstance id={id} config={compoundsConfig} match={match} />
       )}
-    </>
+    </Container>
   );
 };
 
