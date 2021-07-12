@@ -1,7 +1,7 @@
 import { Box, Grid, Image, LinkBox, LinkOverlay, Text } from '@chakra-ui/react';
 import * as React from 'react';
 import { Link as ReachLink } from 'react-router-dom';
-import AbstractReviewsScore from './abstract-review';
+import AbstractReviewsScore from './abstract-reviews-score';
 
 interface ListingCardWithReviewsAndCaptionProps {
   image: {

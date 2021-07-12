@@ -1,4 +1,4 @@
-import { Box, Link } from '@chakra-ui/react';
+import { Container, Link } from '@chakra-ui/react';
 import * as React from 'react';
 import { Link as ReachLink, Route, Switch } from 'react-router-dom';
 import { PageTitle } from '../../components';
@@ -10,11 +10,11 @@ const UiKitIndexPage = () => {
   return (
     <>
       <PageTitle title='Ui-Kit' />
-      <Box as='section'>
+      <Container as='section' maxWidth='container.xl' padding={4}>
         <Link as={ReachLink} to='/ui-kit/components/'>
           Components
         </Link>
-      </Box>
+      </Container>
     </>
   );
 };
