@@ -1,4 +1,4 @@
-import { Box, Heading, Text } from '@chakra-ui/react';
+import { Box, Container, Heading, Text } from '@chakra-ui/react';
 import * as React from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { RouteComponentProps } from 'react-router-dom';
@@ -7,7 +7,7 @@ import { ErrorFallback, PageTitle } from '../../components';
 import { camelCase, upperFirst } from '../../utils/strings';
 import * as atoms from './component-configs/atoms';
 import * as compounds from './component-configs/compounds';
-import * as molecules from './component-configs/compounds';
+import * as molecules from './component-configs/molecules';
 
 const ComponentExample = ({
   label,
@@ -28,10 +28,7 @@ const ComponentExample = ({
   );
 };
 
-const ComponentInstance = ({ configs, match }: any) => {
-  const id = upperFirst(camelCase(match.params.id));
-  // @ts-ignore
-  const config = configs[id];
+const ComponentInstance = ({ id, config, match }: any) => {
   // @ts-ignore
   const Component = components[id];
 
@@ -41,12 +38,12 @@ const ComponentInstance = ({ configs, match }: any) => {
   const title = `${name}`;
 
   return (
-    <>
+    <Container maxWidth='container.xl' padding={4}>
       <PageTitle title={name} />
-      <Heading as='h3' size='md'>
+      <Heading as='h3' size='md' mb={4}>
         {title}
       </Heading>
-      <Box as='section' maxW='container.xl'>
+      <Box as='section'>
         {examples.map((example: any, i: number) => (
           <ComponentExample
             key={'component-example-' + i}
@@ -55,16 +52,30 @@ const ComponentInstance = ({ configs, match }: any) => {
           />
         ))}
       </Box>
-    </>
+    </Container>
   );
 };
 
 const ComponentPage = ({ match }: RouteComponentProps<{ id: string }>) => {
+  const id = upperFirst(camelCase(match.params.id));
+  // @ts-ignore
+  const atomsConfig = atoms[id];
+  // @ts-ignore
+  const moleculesConfig = molecules[id];
+  // @ts-ignore
+  const compoundsConfig = compounds[id];
+
   return (
     <>
-      <ComponentInstance configs={atoms} match={match} />
-      <ComponentInstance configs={molecules} match={match} />
-      <ComponentInstance configs={compounds} match={match} />
+      {atomsConfig && (
+        <ComponentInstance id={id} config={atomsConfig} match={match} />
+      )}
+      {moleculesConfig && (
+        <ComponentInstance id={id} config={moleculesConfig} match={match} />
+      )}
+      {compoundsConfig && (
+        <ComponentInstance id={id} config={compoundsConfig} match={match} />
+      )}
     </>
   );
 };

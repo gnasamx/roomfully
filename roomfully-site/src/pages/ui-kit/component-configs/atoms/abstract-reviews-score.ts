@@ -1,20 +1,20 @@
-const AbstractReview = {
-  name: 'Abstract Review',
+const AbstractReviewsScore = {
+  name: 'Abstract Reviews Score',
   examples: [
     {
-      label: 'Excellent Abstract Review',
+      label: 'Excellent Abstract Reviews Score',
       props: {
         reviewsScorePerMonth: 4.91,
       },
     },
     {
-      label: 'Good Abstract Review',
+      label: 'Good Abstract Reviews Score',
       props: {
         reviewsScorePerMonth: 3.86,
       },
     },
     {
-      label: 'Regular Abstract Review',
+      label: 'Regular Abstracts Review Score',
       props: {
         reviewsScorePerMonth: 2.56,
       },
@@ -22,4 +22,4 @@ const AbstractReview = {
   ],
 };
 
-export default AbstractReview;
+export default AbstractReviewsScore;

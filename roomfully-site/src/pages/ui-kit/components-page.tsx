@@ -13,12 +13,18 @@ import { PageTitle } from '../../components';
 import { kebabCase } from '../../utils/strings';
 import * as atoms from './component-configs/atoms';
 import * as compounds from './component-configs/compounds';
-import * as molecules from './component-configs/compounds';
+import * as molecules from './component-configs/molecules';
 
 const ComponentsList = ({ configs, type }: any) => {
   return (
-    <Box as='section'>
-      <Heading as='h3' size='md'>
+    <Box
+      as='section'
+      borderWidth={1}
+      borderColor='gray.200'
+      padding={4}
+      borderRadius='md'
+    >
+      <Heading as='h3' size='md' mb={3}>
         {type}
       </Heading>
       <UnorderedList>

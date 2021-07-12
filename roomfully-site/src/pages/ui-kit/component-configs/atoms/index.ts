@@ -1,1 +1,1 @@
-export { default as AbstractReview } from './abstract-review';
+export { default as AbstractReviewsScore } from './abstract-reviews-score';
