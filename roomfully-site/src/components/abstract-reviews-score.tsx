@@ -6,6 +6,8 @@ interface AbstractReviewsScoreProps {
   reviewsScorePerMonth: number;
 }
 
+/** Atom */
+
 const decideRatingAppearance = (reviewsScorePerMonth: number) => {
   if (reviewsScorePerMonth > 4) {
     return {

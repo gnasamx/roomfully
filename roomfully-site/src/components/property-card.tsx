@@ -1,7 +1,6 @@
 import {
   Box,
   Flex,
-  HStack,
   Image,
   LinkBox,
   LinkOverlay,
@@ -9,10 +8,11 @@ import {
   Text,
 } from '@chakra-ui/react';
 import * as React from 'react';
-import { HiStar } from 'react-icons/hi';
 import { Link as ReachLink } from 'react-router-dom';
+import type { StarWithReviewsCountAndNoOfReviewsProps } from '../models/star-with-reviews-count-and-no-of-reviews';
+import StarWithReviewsCountAndNoOfReviews from './star-with-reviews-count-and-no-of-reviews';
 
-interface PropertyCardProps {
+interface PropertyCardProps extends StarWithReviewsCountAndNoOfReviewsProps {
   image: {
     src: string;
     alt: string;
@@ -20,8 +20,6 @@ interface PropertyCardProps {
   name: string;
   propertyType: string;
   price: string;
-  reviewsScorePerMonth: number;
-  numberOfReviews: number;
   listingUrl: string;
 }
 
@@ -75,15 +73,10 @@ const PropertyCard: React.FC<PropertyCardProps> = React.memo(
               alignItems='center'
             >
               <Text fontWeight='semibold'>{price} / night</Text>
-              <HStack spacing={1}>
-                <HiStar color='tomato' />
-                <Text fontWeight='semibold' fontSize='sm'>
-                  {reviewsScorePerMonth}
-                </Text>
-                <Text fontSize='sm' color='gray.600'>
-                  ({numberOfReviews})
-                </Text>
-              </HStack>
+              <StarWithReviewsCountAndNoOfReviews
+                reviewsScorePerMonth={reviewsScorePerMonth}
+                numberOfReviews={numberOfReviews}
+              />
             </SimpleGrid>
           </Box>
         </Flex>
