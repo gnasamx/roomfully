@@ -9,17 +9,20 @@ import {
 } from '@chakra-ui/react';
 import * as React from 'react';
 import { Link as ReachLink } from 'react-router-dom';
+import { FromPriceOrPricePerNightProps } from '../models/from-price-or-price-per-night';
 import type { StarWithReviewsCountAndNoOfReviewsProps } from '../models/star-with-reviews-count-and-no-of-reviews';
+import FromPriceOrPricePerNight from './from-price-or-price-per-night';
 import StarWithReviewsCountAndNoOfReviews from './star-with-reviews-count-and-no-of-reviews';
 
-interface PropertyCardProps extends StarWithReviewsCountAndNoOfReviewsProps {
+interface PropertyCardProps
+  extends StarWithReviewsCountAndNoOfReviewsProps,
+    FromPriceOrPricePerNightProps {
   image: {
     src: string;
     alt: string;
   };
   name: string;
   propertyType: string;
-  price: string;
   listingUrl: string;
 }
 
@@ -72,7 +75,10 @@ const PropertyCard: React.FC<PropertyCardProps> = React.memo(
               columnGap={4}
               alignItems='center'
             >
-              <Text fontWeight='semibold'>{price} / night</Text>
+              <FromPriceOrPricePerNight
+                price={price}
+                calculatePriceType='relatively'
+              />
               <StarWithReviewsCountAndNoOfReviews
                 reviewsScorePerMonth={reviewsScorePerMonth}
                 numberOfReviews={numberOfReviews}

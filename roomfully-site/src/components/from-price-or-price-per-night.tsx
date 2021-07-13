@@ -6,28 +6,35 @@ import type { FromPriceOrPricePerNightProps } from '../models/from-price-or-pric
 
 const FromPriceOrPricePerNight: React.FC<FromPriceOrPricePerNightProps> =
   React.memo(({ price, calculatePriceType, suffixAverage }) => {
-    return (
-      <Flex
-        display='inline-flex'
-        flexDirection={
-          calculatePriceType === 'relatively' ? 'row-reverse' : 'row'
-        }
-      >
-        <Text as='span' fontWeight='semibold'>
-          ${price}
-        </Text>
-        &nbsp;
-        <Text fontSize='sm' color='gray.600'>
-          {calculatePriceType === 'relatively' ? 'from' : '/ night '}
-        </Text>
-        &nbsp;
-        {suffixAverage && (
-          <Text fontSize='sm' color='gray.600'>
-            avg.
+    if (calculatePriceType === 'relatively') {
+      return (
+        <Flex display='inline-flex'>
+          <Text color='gray.600'>from&nbsp;</Text>
+          <Text as='span' fontWeight='semibold'>
+            ${price}&nbsp;
           </Text>
-        )}
-      </Flex>
-    );
+          {suffixAverage && (
+            <Text fontSize='sm' color='gray.600'>
+              avg.
+            </Text>
+          )}
+        </Flex>
+      );
+    } else {
+      return (
+        <Flex display='inline-flex'>
+          <Text as='span' fontWeight='semibold'>
+            ${price}&nbsp;
+          </Text>
+          <Text color='gray.600'>/ night&nbsp;</Text>
+          {suffixAverage && (
+            <Text fontSize='sm' color='gray.600'>
+              avg.
+            </Text>
+          )}
+        </Flex>
+      );
+    }
   });
 
 export default FromPriceOrPricePerNight;
