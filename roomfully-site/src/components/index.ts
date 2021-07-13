@@ -8,4 +8,4 @@ export { default as PageTitle } from './page-title';
 export { default as PropertyCard } from './property-card';
 export { default as PropertyTypeCard } from './property-type-card';
 export { default as StarWithReviewsCountAndNoOfReviews } from './star-with-reviews-count-and-no-of-reviews';
-
+export { default as FromPriceOrPricePerNight } from './from-price-or-price-per-night';
