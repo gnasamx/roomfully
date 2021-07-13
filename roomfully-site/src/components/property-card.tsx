@@ -1,7 +1,6 @@
 import {
   Box,
   Flex,
-  HStack,
   Image,
   LinkBox,
   LinkOverlay,
@@ -9,21 +8,25 @@ import {
   Text,
 } from '@chakra-ui/react';
 import * as React from 'react';
-import { HiStar } from 'react-icons/hi';
 import { Link as ReachLink } from 'react-router-dom';
+import type { FromPriceOrPricePerNightProps } from '../models/from-price-or-price-per-night';
+import type { StarWithReviewsCountAndNoOfReviewsProps } from '../models/star-with-reviews-count-and-no-of-reviews';
+import FromPriceOrPricePerNight from './from-price-or-price-per-night';
+import StarWithReviewsCountAndNoOfReviews from './star-with-reviews-count-and-no-of-reviews';
 
-interface PropertyCardProps {
+interface PropertyCardProps
+  extends StarWithReviewsCountAndNoOfReviewsProps,
+    Pick<FromPriceOrPricePerNightProps, 'price'> {
   image: {
     src: string;
     alt: string;
   };
   name: string;
   propertyType: string;
-  price: string;
-  reviewsScorePerMonth: number;
-  numberOfReviews: number;
   listingUrl: string;
 }
+
+/** Molecule */
 
 const PropertyCard: React.FC<PropertyCardProps> = React.memo(
   ({
@@ -72,16 +75,14 @@ const PropertyCard: React.FC<PropertyCardProps> = React.memo(
               columnGap={4}
               alignItems='center'
             >
-              <Text fontWeight='semibold'>{price} / night</Text>
-              <HStack spacing={1}>
-                <HiStar color='tomato' />
-                <Text fontWeight='semibold' fontSize='sm'>
-                  {reviewsScorePerMonth}
-                </Text>
-                <Text fontSize='sm' color='gray.600'>
-                  ({numberOfReviews})
-                </Text>
-              </HStack>
+              <FromPriceOrPricePerNight
+                price={price}
+                calculatePriceType='relatively'
+              />
+              <StarWithReviewsCountAndNoOfReviews
+                reviewsScorePerMonth={reviewsScorePerMonth}
+                numberOfReviews={numberOfReviews}
+              />
             </SimpleGrid>
           </Box>
         </Flex>

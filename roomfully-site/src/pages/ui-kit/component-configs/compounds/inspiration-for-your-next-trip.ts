@@ -14,7 +14,7 @@ const InspirationForYourNextTrip = {
               alt: 'Batumi city',
             },
             name: 'Batumi',
-            averagePrice: 40,
+            price: 40,
             url: '#',
           },
           {
@@ -23,7 +23,7 @@ const InspirationForYourNextTrip = {
               alt: 'Ambrolauri city',
             },
             name: 'Ambrolauri',
-            averagePrice: 29,
+            price: 29,
             url: '#',
           },
           {
@@ -32,7 +32,7 @@ const InspirationForYourNextTrip = {
               alt: 'Sighnaghi city',
             },
             name: 'Sighnaghi',
-            averagePrice: 20,
+            price: 20,
             url: '#',
           },
           {
@@ -41,7 +41,7 @@ const InspirationForYourNextTrip = {
               alt: 'Tbilisi town',
             },
             name: 'Tbilisi',
-            averagePrice: 35,
+            price: 35,
             url: '#',
           },
         ],

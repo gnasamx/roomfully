@@ -25,6 +25,8 @@ export interface CountryCardProps {
   countryUrl: string;
 }
 
+/** Molecule */
+
 const CountryCard: React.FC<CountryCardProps> = React.memo(
   ({ image, countryName, apartmentsCount, cta, countryUrl }) => {
     return (

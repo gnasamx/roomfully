@@ -1,9 +1,12 @@
 import { Box, Grid, Image, LinkBox, LinkOverlay, Text } from '@chakra-ui/react';
 import * as React from 'react';
 import { Link as ReachLink } from 'react-router-dom';
+import type { FromPriceOrPricePerNightProps } from '../models/from-price-or-price-per-night';
 import AbstractReviewsScore from './abstract-reviews-score';
+import FromPriceOrPricePerNight from './from-price-or-price-per-night';
 
-interface ListingCardWithReviewsAndCaptionProps {
+interface ListingCardWithReviewsAndCaptionProps
+  extends Pick<FromPriceOrPricePerNightProps, 'price'> {
   image: {
     src: string;
     alt: string;
@@ -11,10 +14,11 @@ interface ListingCardWithReviewsAndCaptionProps {
   name: string;
   propertyType: string;
   caption: string;
-  price: number;
   reviewsScorePerMonth: number;
   listingUrl: string;
 }
+
+/** Molecule */
 
 const ListingCardWithReviewsAndCaption: React.FC<ListingCardWithReviewsAndCaptionProps> =
   React.memo(
@@ -65,12 +69,10 @@ const ListingCardWithReviewsAndCaption: React.FC<ListingCardWithReviewsAndCaptio
                 <AbstractReviewsScore
                   reviewsScorePerMonth={reviewsScorePerMonth}
                 />
-                <Box display='inline-flex'>
-                  <Text fontSize='sm' color='gray.600'>
-                    from&nbsp;
-                  </Text>
-                  <Text fontWeight='semibold'>${price}</Text>
-                </Box>
+                <FromPriceOrPricePerNight
+                  price={price}
+                  calculatePriceType='relatively'
+                />
               </Grid>
             </Grid>
           </Grid>
