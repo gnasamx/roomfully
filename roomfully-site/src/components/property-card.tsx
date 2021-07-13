@@ -25,6 +25,8 @@ interface PropertyCardProps {
   listingUrl: string;
 }
 
+/** Molecule */
+
 const PropertyCard: React.FC<PropertyCardProps> = React.memo(
   ({
     image,

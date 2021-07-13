@@ -16,6 +16,8 @@ interface ListingCardWithReviewsAndCaptionProps {
   listingUrl: string;
 }
 
+/** Molecule */
+
 const ListingCardWithReviewsAndCaption: React.FC<ListingCardWithReviewsAndCaptionProps> =
   React.memo(
     ({

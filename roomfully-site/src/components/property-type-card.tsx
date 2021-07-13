@@ -13,6 +13,8 @@ interface PropertyTypeCardProps {
   propertyUrl: string;
 }
 
+/** Molecule */
+
 const PropertyTypeCard: React.FC<PropertyTypeCardProps> = React.memo(
   ({ image, name, roomType, numberOfProperties, propertyUrl }) => {
     return (
