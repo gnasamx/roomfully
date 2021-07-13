@@ -1,70 +1,13 @@
-import {
-  Box,
-  Heading,
-  HStack,
-  Image,
-  LinkBox,
-  LinkOverlay,
-  SimpleGrid,
-  Text,
-} from '@chakra-ui/react';
+import { Heading, SimpleGrid, Text } from '@chakra-ui/react';
 import * as React from 'react';
-import { Link as ReachLink } from 'react-router-dom';
-
-interface Inspiration {
-  image: {
-    src: string;
-    alt: string;
-  };
-  name: string;
-  averagePrice: number;
-  url: string;
-}
+import { InspirationCardProps } from '../models/inspiration-card';
+import InspirationCard from './inspiration-card';
 
 interface InspirationForYourNextTripProps {
   header: string;
   description: string;
-  inspirations: Inspiration[];
+  inspirations: InspirationCardProps[];
 }
-
-const InspirationCard: React.FC<Inspiration> = ({
-  image,
-  name,
-  averagePrice,
-  url,
-}) => {
-  return (
-    <LinkBox>
-      <HStack
-        padding={3}
-        borderRadius={4}
-        borderColor='gray.200'
-        borderWidth={1}
-      >
-        <Box flexShrink={0}>
-          <Image
-            borderRadius='md'
-            width={16}
-            height={16}
-            src={image.src}
-            alt={image.alt}
-            loading='lazy'
-          />
-        </Box>
-        <Box>
-          <Text fontWeight='medium'>
-            <LinkOverlay as={ReachLink} to={url}>
-              {name}
-            </LinkOverlay>
-          </Text>
-          <Text fontSize='sm' color='gray.600'>
-            ${averagePrice}/night avg.
-          </Text>
-        </Box>
-      </HStack>
-    </LinkBox>
-  );
-};
 
 const InspirationForYourNextTrip: React.FC<InspirationForYourNextTripProps> = ({
   header,
@@ -85,7 +28,9 @@ const InspirationForYourNextTrip: React.FC<InspirationForYourNextTripProps> = ({
       </SimpleGrid>
       <SimpleGrid columns={[1, 1, 2, 3]} spacing={4}>
         {inspirations.map((inspiration) => (
-          <InspirationCard key={inspiration.name} {...inspiration} />
+          <React.Fragment key={inspiration.name}>
+            <InspirationCard {...inspiration} />
+          </React.Fragment>
         ))}
       </SimpleGrid>
     </SimpleGrid>
