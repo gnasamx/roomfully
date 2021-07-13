@@ -9,7 +9,7 @@ const InspirationCard = {
           alt: 'Batumi city',
         },
         name: 'Batumi',
-        averagePrice: 40,
+        price: 40,
         url: '#',
       },
     },

@@ -9,11 +9,12 @@ import {
 import * as React from 'react';
 import { Link as ReachLink } from 'react-router-dom';
 import type { InspirationCardProps } from '../models/inspiration-card';
+import FromPriceOrPricePerNight from './from-price-or-price-per-night';
 
 /** Molecule */
 
 const InspirationCard: React.FC<InspirationCardProps> = React.memo(
-  ({ image, name, averagePrice, url }) => {
+  ({ image, name, price, url }) => {
     return (
       <LinkBox>
         <HStack
@@ -38,9 +39,12 @@ const InspirationCard: React.FC<InspirationCardProps> = React.memo(
                 {name}
               </LinkOverlay>
             </Text>
-            <Text fontSize='sm' color='gray.600'>
-              ${averagePrice}/night avg.
-            </Text>
+            <FromPriceOrPricePerNight
+              price={price}
+              calculatePriceType='relatively'
+              suffixAverage
+              useInsideBody
+            />
           </Box>
         </HStack>
       </LinkBox>

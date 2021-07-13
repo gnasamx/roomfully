@@ -5,36 +5,56 @@ import type { FromPriceOrPricePerNightProps } from '../models/from-price-or-pric
 /** Atom */
 
 const FromPriceOrPricePerNight: React.FC<FromPriceOrPricePerNightProps> =
-  React.memo(({ price, calculatePriceType, suffixAverage }) => {
-    if (calculatePriceType === 'relatively') {
-      return (
-        <Flex display='inline-flex'>
-          <Text color='gray.600'>from&nbsp;</Text>
-          <Text as='span' fontWeight='semibold'>
-            ${price}&nbsp;
-          </Text>
-          {suffixAverage && (
-            <Text fontSize='sm' color='gray.600'>
-              avg.
+  React.memo(
+    ({
+      price,
+      calculatePriceType,
+      suffixAverage = false,
+      useInsideBody = false,
+    }) => {
+      if (calculatePriceType === 'relatively') {
+        return (
+          <Flex display='inline-flex'>
+            <Text color='gray.600' fontSize={useInsideBody ? 'sm' : ''}>
+              from
             </Text>
-          )}
-        </Flex>
-      );
-    } else {
-      return (
-        <Flex display='inline-flex'>
-          <Text as='span' fontWeight='semibold'>
-            ${price}&nbsp;
-          </Text>
-          <Text color='gray.600'>/ night&nbsp;</Text>
-          {suffixAverage && (
-            <Text fontSize='sm' color='gray.600'>
-              avg.
+            <Text
+              as='span'
+              fontWeight={useInsideBody ? 'normal' : 'semibold'}
+              fontSize={useInsideBody ? 'sm' : ''}
+            >
+              &nbsp;${price}
             </Text>
-          )}
-        </Flex>
-      );
+            {suffixAverage && (
+              <Text fontSize='sm' color='gray.600'>
+                &nbsp;avg.
+              </Text>
+            )}
+          </Flex>
+        );
+      } else {
+        return (
+          <Flex display='inline-flex'>
+            <Text
+              as='span'
+              fontWeight={useInsideBody ? 'normal' : 'semibold'}
+              fontSize={useInsideBody ? 'sm' : ''}
+            >
+              ${price}
+            </Text>
+            <Text color='gray.600' fontSize={useInsideBody ? 'sm' : ''}>
+              {useInsideBody ? '' : <>&nbsp;</>}/
+              {useInsideBody ? '' : <>&nbsp;</>}night
+            </Text>
+            {suffixAverage && (
+              <Text fontSize='sm' color='gray.600'>
+                &nbsp;avg.
+              </Text>
+            )}
+          </Flex>
+        );
+      }
     }
-  });
+  );
 
 export default FromPriceOrPricePerNight;
