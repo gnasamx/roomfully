@@ -9,14 +9,14 @@ import {
 } from '@chakra-ui/react';
 import * as React from 'react';
 import { Link as ReachLink } from 'react-router-dom';
-import { FromPriceOrPricePerNightProps } from '../models/from-price-or-price-per-night';
+import type { FromPriceOrPricePerNightProps } from '../models/from-price-or-price-per-night';
 import type { StarWithReviewsCountAndNoOfReviewsProps } from '../models/star-with-reviews-count-and-no-of-reviews';
 import FromPriceOrPricePerNight from './from-price-or-price-per-night';
 import StarWithReviewsCountAndNoOfReviews from './star-with-reviews-count-and-no-of-reviews';
 
 interface PropertyCardProps
   extends StarWithReviewsCountAndNoOfReviewsProps,
-    FromPriceOrPricePerNightProps {
+    Pick<FromPriceOrPricePerNightProps, 'price'> {
   image: {
     src: string;
     alt: string;
