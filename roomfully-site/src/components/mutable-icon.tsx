@@ -3,7 +3,7 @@ import * as React from 'react';
 import { HiOutlineHome } from 'react-icons/hi';
 import type { MutableIconProps } from '../models/mutable-icon';
 
-/** Icon */
+/** Atom */
 
 const MutableIcon: React.FC<MutableIconProps> = React.memo(
   ({ mutableIconType }) => {
