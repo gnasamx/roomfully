@@ -8,7 +8,7 @@ import type { ReviewsIconWithCountsAndNoOfReviewsProps } from '../models/reviews
 const ReviewsIconWithCountsAndNoOfReviews: React.FC<ReviewsIconWithCountsAndNoOfReviewsProps> =
   React.memo(({ reviewsScorePerMonth, numberOfReviews }) => {
     return (
-      <HStack spacing={1}>
+      <HStack spacing={1} display='inline-flex'>
         <HiStar color='tomato' />
         <Text fontWeight='semibold' fontSize='sm'>
           {reviewsScorePerMonth}
