@@ -9,7 +9,7 @@ const Particular: React.FC<ParticularProps> = React.memo(
   ({ title, caption, particularType }) => {
     return (
       <HStack width='full' spacing={3} alignItems='flex-start'>
-        <MutableIcon mutableIconType='home' />
+        <MutableIcon mutableIconType={particularType} />
         <Box>
           <Text fontWeight='semibold'>{title}</Text>
           <Text color='gray.600'>{caption}</Text>
