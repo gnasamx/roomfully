@@ -1,5 +1,5 @@
-const ListingDescriptionMetaTitle = {
-  name: 'Listing Description Meta Title',
+const ListingDescriptionHeader = {
+  name: 'Listing Description Header',
   examples: [
     {
       label: 'Default',
@@ -15,4 +15,4 @@ const ListingDescriptionMetaTitle = {
   ],
 };
 
-export default ListingDescriptionMetaTitle;
+export default ListingDescriptionHeader;

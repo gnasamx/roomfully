@@ -5,14 +5,14 @@ import type { ReviewsIconWithCountsAndNoOfReviewsProps } from '../models/reviews
 import ReviewsIconWithCountsAndNoOfReviews from './reviews-icon-with-counts-and-no-of-reviews';
 import parse from 'html-react-parser';
 
-interface ListingDescriptionMetaTitleProps
+interface ListingDescriptionHeaderProps
   extends ReviewsIconWithCountsAndNoOfReviewsProps {
   name: string;
   propertyType: string;
   description: string;
 }
 
-const ListingDescriptionMetaTitle: React.FC<ListingDescriptionMetaTitleProps> =
+const ListingDescriptionHeader: React.FC<ListingDescriptionHeaderProps> =
   React.memo(
     ({
       name,
@@ -49,4 +49,4 @@ const ListingDescriptionMetaTitle: React.FC<ListingDescriptionMetaTitleProps> =
     }
   );
 
-export default ListingDescriptionMetaTitle;
+export default ListingDescriptionHeader;
