@@ -1,4 +1,4 @@
-export interface StarWithReviewsCountAndNoOfReviewsProps {
+export interface ReviewsIconWithCountsAndNoOfReviewsProps {
   reviewsScorePerMonth: number;
   numberOfReviews: number;
 }

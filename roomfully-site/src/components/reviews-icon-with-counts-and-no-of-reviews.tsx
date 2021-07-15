@@ -1,11 +1,11 @@
 import { HStack, Text } from '@chakra-ui/react';
 import * as React from 'react';
 import { HiStar } from 'react-icons/hi';
-import type { StarWithReviewsCountAndNoOfReviewsProps } from '../models/star-with-reviews-count-and-no-of-reviews';
+import type { ReviewsIconWithCountsAndNoOfReviewsProps } from '../models/reviews-icon-with-counts-and-no-of-reviews';
 
 /** Atom */
 
-const StarWithReviewsCountAndNoOfReviews: React.FC<StarWithReviewsCountAndNoOfReviewsProps> =
+const ReviewsIconWithCountsAndNoOfReviews: React.FC<ReviewsIconWithCountsAndNoOfReviewsProps> =
   React.memo(({ reviewsScorePerMonth, numberOfReviews }) => {
     return (
       <HStack spacing={1}>
@@ -20,4 +20,4 @@ const StarWithReviewsCountAndNoOfReviews: React.FC<StarWithReviewsCountAndNoOfRe
     );
   });
 
-export default StarWithReviewsCountAndNoOfReviews;
+export default ReviewsIconWithCountsAndNoOfReviews;

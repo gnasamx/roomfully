@@ -10,12 +10,12 @@ import {
 import * as React from 'react';
 import { Link as ReachLink } from 'react-router-dom';
 import type { FromPriceOrPricePerNightProps } from '../models/from-price-or-price-per-night';
-import type { StarWithReviewsCountAndNoOfReviewsProps } from '../models/star-with-reviews-count-and-no-of-reviews';
+import type { ReviewsIconWithCountsAndNoOfReviewsProps } from '../models/reviews-icon-with-counts-and-no-of-reviews';
 import FromPriceOrPricePerNight from './from-price-or-price-per-night';
-import StarWithReviewsCountAndNoOfReviews from './star-with-reviews-count-and-no-of-reviews';
+import ReviewsIconWithCountsAndNoOfReviews from './reviews-icon-with-counts-and-no-of-reviews';
 
 interface PropertyCardProps
-  extends StarWithReviewsCountAndNoOfReviewsProps,
+  extends ReviewsIconWithCountsAndNoOfReviewsProps,
     Pick<FromPriceOrPricePerNightProps, 'price'> {
   image: {
     src: string;
@@ -79,7 +79,7 @@ const PropertyCard: React.FC<PropertyCardProps> = React.memo(
                 price={price}
                 calculatePriceType='relatively'
               />
-              <StarWithReviewsCountAndNoOfReviews
+              <ReviewsIconWithCountsAndNoOfReviews
                 reviewsScorePerMonth={reviewsScorePerMonth}
                 numberOfReviews={numberOfReviews}
               />
