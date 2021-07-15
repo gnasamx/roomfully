@@ -1,10 +1,11 @@
-import { ChakraProvider, theme } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 import * as React from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { ErrorFallback } from './components';
 import Site from './pages/site';
 import UiKit from './pages/ui-kit';
+import theme from './theme';
 
 const RouteSwitch = () => {
   return (
