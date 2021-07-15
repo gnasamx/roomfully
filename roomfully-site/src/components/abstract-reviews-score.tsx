@@ -33,7 +33,12 @@ const AbstractReviewsScore: React.FC<AbstractReviewsScoreProps> = React.memo(
       decideRatingAppearance(reviewsScorePerMonth);
     return (
       <HStack alignItems='stretch'>
-        <Center backgroundColor={backgroundColor} w={6} h={6} borderRadius='md'>
+        <Center
+          backgroundColor={backgroundColor}
+          width={6}
+          height={6}
+          borderRadius='md'
+        >
           <HiStar color='white' />
         </Center>
         <Text fontSize='sm' fontWeight='semibold'>

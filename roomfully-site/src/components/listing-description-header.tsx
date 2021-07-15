@@ -5,6 +5,7 @@ import type { ReviewsIconWithCountsAndNoOfReviewsProps } from '../models/reviews
 import ReviewsIconWithCountsAndNoOfReviews from './reviews-icon-with-counts-and-no-of-reviews';
 import parse from 'html-react-parser';
 
+/** Molecule */
 interface ListingDescriptionHeaderProps
   extends ReviewsIconWithCountsAndNoOfReviewsProps {
   name: string;
