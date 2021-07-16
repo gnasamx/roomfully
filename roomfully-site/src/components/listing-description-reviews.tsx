@@ -12,6 +12,7 @@ import {
 import * as React from 'react';
 import { HiStar } from 'react-icons/hi';
 import { ListingDescriptionReviewsProps } from '../models/listing-description-reviews';
+import ReviewCard from './review-card';
 import ReviewSentiment from './review-sentiment';
 
 /** Compound */
@@ -23,10 +24,11 @@ const ListingDescriptionReviews: React.FC<ListingDescriptionReviewsProps> =
       numberOfReviews,
       allReviewsButton,
       reviewSentiments,
+      guestsReviews,
     }) => {
       return (
-        <>
-          <Heading as='h3' size='lg' marginBottom={4}>
+        <VStack spacing={4} alignItems='flex-start'>
+          <Heading as='h3' size='lg'>
             Reviews
           </Heading>
           <Grid
@@ -38,6 +40,7 @@ const ListingDescriptionReviews: React.FC<ListingDescriptionReviewsProps> =
               md: '35% min-content 1fr',
             }}
             rowGap={8}
+            width='full'
           >
             <VStack
               alignContent='center'
@@ -68,7 +71,12 @@ const ListingDescriptionReviews: React.FC<ListingDescriptionReviewsProps> =
               ))}
             </VStack>
           </Grid>
-        </>
+          <VStack spacing={8} alignItems='flex-start'>
+            {guestsReviews.map((review) => (
+              <ReviewCard key={review.shortReviewTitle} {...review} />
+            ))}
+          </VStack>
+        </VStack>
       );
     }
   );

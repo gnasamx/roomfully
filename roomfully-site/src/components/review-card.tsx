@@ -16,7 +16,7 @@ const ReviewCard: React.FC<ReviewCardProps> = React.memo(
     shortReviewTitle,
   }) => {
     return (
-      <VStack spacing={4} alignItems='flex-start'>
+      <VStack spacing={4} alignItems='flex-start' width='full'>
         <Grid
           width='full'
           templateRows='1fr'

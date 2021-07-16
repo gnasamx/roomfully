@@ -13,11 +13,15 @@ const UserDetails: React.FC<UserDetailsProps> = React.memo(
         columnGap={3}
         alignItems='center'
       >
-        <Box flexShrink={0} width={12} height={12} loading='lazy'>
+        <Box flexShrink={0}>
           <Image
             src={profilePicture.src}
             alt={profilePicture.alt}
             borderRadius='md'
+            objectFit='cover'
+            width={12}
+            height={12}
+            loading='lazy'
           />
         </Box>
         <Box>

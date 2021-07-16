@@ -5,7 +5,7 @@ const UserDetails = {
       label: 'Default',
       props: {
         profilePicture: {
-          src: 'https://bit.ly/3z3pAsT',
+          src: 'https://bit.ly/3xOYbdZ',
           alt: 'Man smiling in profile picture',
         },
         name: 'Shadeen McDowell',
