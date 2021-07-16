@@ -29,7 +29,7 @@ const ListingDescriptionHeader: React.FC<ListingDescriptionHeaderProps> =
             templateRows={['1fr auto', '1fr']}
             templateColumns={['1fr', 'repeat(2, min-content) auto']}
             gap={1}
-            mb={2}
+            marginBottom={2}
           >
             <ReviewsIconWithCountsAndNoOfReviews
               reviewsScorePerMonth={reviewsScorePerMonth}
@@ -43,7 +43,7 @@ const ListingDescriptionHeader: React.FC<ListingDescriptionHeaderProps> =
           <Heading as='h1' size='xl'>
             {name}
           </Heading>
-          <Divider my={4} />
+          <Divider marginY={4} />
           <Text color='gray.600'>{parse(description)}</Text>
         </Box>
       );

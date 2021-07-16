@@ -24,7 +24,7 @@ const ComponentsList = ({ configs, type }: any) => {
       padding={4}
       borderRadius='md'
     >
-      <Heading as='h3' size='md' mb={3}>
+      <Heading as='h3' size='md' marginBottom={3}>
         {type}
       </Heading>
       <UnorderedList>
@@ -53,7 +53,7 @@ const ComponentsPage = () => {
     <>
       <PageTitle title='Components' />
       <Container as='section' maxW='container.xl' padding={4}>
-        <Heading mb={4}>Components</Heading>
+        <Heading marginBottom={4}>Components</Heading>
         <SimpleGrid columns={[1, null, 3]} spacing={4}>
           <ComponentsList type='Atoms' configs={atoms} />
           <ComponentsList type='Molecules' configs={molecules} />

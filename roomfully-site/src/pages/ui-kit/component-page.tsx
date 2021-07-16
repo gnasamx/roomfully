@@ -19,8 +19,8 @@ const ComponentExample = ({
   props: any;
 }) => {
   return (
-    <Box mb={6}>
-      <Text mb={4}>{label}</Text>
+    <Box marginBottom={6}>
+      <Text marginBottom={4}>{label}</Text>
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <Component {...props} />
       </ErrorBoundary>
@@ -40,7 +40,7 @@ const ComponentInstance = ({ id, config, match }: any) => {
   return (
     <>
       <PageTitle title={name} />
-      <Heading as='h3' size='md' mb={4}>
+      <Heading as='h3' size='md' marginBottom={4}>
         {title}
       </Heading>
       <Box as='section'>

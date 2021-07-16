@@ -60,7 +60,7 @@ const PropertyCard: React.FC<PropertyCardProps> = React.memo(
             width='full'
             height='full'
           >
-            <Box mb={4}>
+            <Box marginBottom={4}>
               <Text fontWeight='semibold'>
                 <LinkOverlay as={ReachLink} to={listingUrl}>
                   {name}
