@@ -1,4 +1,4 @@
-import { MutableIconProps } from './mutable-icon';
+import type { MutableIconProps } from './mutable-icon';
 
 export interface ParticularProps {
   title: string;

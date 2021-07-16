@@ -1,4 +1,4 @@
-import { FromPriceOrPricePerNightProps } from "./from-price-or-price-per-night";
+import type { FromPriceOrPricePerNightProps } from "./from-price-or-price-per-night";
 
 export interface InspirationCardProps extends Pick<FromPriceOrPricePerNightProps, 'price'> {
   image: {

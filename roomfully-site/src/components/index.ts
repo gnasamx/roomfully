@@ -15,4 +15,4 @@ export { default as PropertyCard } from './property-card';
 export { default as PropertyTypeCard } from './property-type-card';
 export { default as ReviewSentiment } from './review-sentiment';
 export { default as ReviewsIconWithCountsAndNoOfReviews } from './reviews-icon-with-counts-and-no-of-reviews';
-
+export { default as SentimentVisualization } from './sentiment-visualization';
