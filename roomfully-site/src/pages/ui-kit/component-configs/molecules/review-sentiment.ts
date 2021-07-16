@@ -21,7 +21,7 @@ const ReviewSentiment = {
       label: 'Negative sentiment',
       props: {
         type: 'Negative',
-        category: 'under 2 stars',
+        category: 'Under 2 stars',
         value: 5,
       },
     },

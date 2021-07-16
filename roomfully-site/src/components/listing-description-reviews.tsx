@@ -3,11 +3,11 @@ import {
   Button,
   Divider,
   Grid,
-  VStack,
-  Text,
+  Heading,
   HStack,
   Icon,
-  Heading,
+  Text,
+  VStack
 } from '@chakra-ui/react';
 import * as React from 'react';
 import { HiStar } from 'react-icons/hi';
@@ -39,7 +39,7 @@ const ListingDescriptionReviews: React.FC<ListingDescriptionReviewsProps> =
             alignContent='center'
             justifyContent='space-between'
             paddingX={8}
-            spacing={[8]}
+            spacing={8}
           >
             <Box>
               <HStack justifyContent='center' alignItems='center'>
@@ -52,7 +52,7 @@ const ListingDescriptionReviews: React.FC<ListingDescriptionReviewsProps> =
                 Based on {numberOfReviews} reviews
               </Text>
             </Box>
-            <Button>{allReviewsButton}</Button>
+            <Button> {allReviewsButton}</Button>
           </VStack>
           <Divider orientation='vertical' display={['none', 'none', 'flex']} />
           <VStack spacing={6} alignItems='flex-start' paddingX={8}>
@@ -64,4 +64,5 @@ const ListingDescriptionReviews: React.FC<ListingDescriptionReviewsProps> =
       );
     }
   );
+
 export default ListingDescriptionReviews;
