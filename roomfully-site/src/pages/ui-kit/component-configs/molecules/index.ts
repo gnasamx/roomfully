@@ -7,5 +7,5 @@ export { default as PropertyCard } from './property-card';
 export { default as PropertyTypeCard } from './property-type-card';
 export { default as ReviewCard } from './review-card';
 export { default as ReviewSentiment } from './review-sentiment';
-
+export { default as UserDetails } from './user-details';
 
