@@ -11,6 +11,7 @@ const SentimentVisualization: React.FC<SentimentVisualizationProps> =
         value={value}
         borderRadius='lg'
         size='xs'
+        width='full'
         backgroundColor={
           value > 50 ? 'green.100' : value > 10 ? 'yellow.100' : 'red.100'
         }

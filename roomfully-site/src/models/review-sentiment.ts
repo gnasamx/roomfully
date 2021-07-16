@@ -1,6 +1,6 @@
 import type { SentimentVisualizationProps } from './sentiment-visualization';
 
-export interface ReviewSentiment extends SentimentVisualizationProps {
+export interface ReviewSentimentProps extends SentimentVisualizationProps {
   type: string;
   category: string;
 }
