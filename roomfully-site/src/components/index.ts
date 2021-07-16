@@ -8,12 +8,14 @@ export { default as InspirationForYourNextTrip } from './inspiration-for-your-ne
 export { default as ListingCardWithReviewsAndCaption } from './listing-card-with-reviews-and-caption';
 export { default as ListingDescriptionHeader } from './listing-description-header';
 export { default as ListingDescriptionParticulars } from './listing-description-particulars';
+export { default as ListingDescriptionReviews } from './listing-description-reviews';
 export { default as MutableIcon } from './mutable-icon';
 export { default as PageTitle } from './page-title';
 export { default as Particular } from './particular';
 export { default as PropertyCard } from './property-card';
 export { default as PropertyTypeCard } from './property-type-card';
+export { default as ReviewCard } from './review-card';
 export { default as ReviewSentiment } from './review-sentiment';
 export { default as ReviewsIconWithCountsAndNoOfReviews } from './reviews-icon-with-counts-and-no-of-reviews';
 export { default as SentimentVisualization } from './sentiment-visualization';
-export { default as ListingDescriptionReviews } from './listing-description-reviews';
+
