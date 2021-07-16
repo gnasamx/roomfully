@@ -2,6 +2,9 @@ import { Grid, HStack, Icon, Text, VStack } from '@chakra-ui/react';
 import * as React from 'react';
 import { HiStar } from 'react-icons/hi';
 import type { ReviewCardProps } from '../models/review-card';
+import UserDetails from './user-details';
+
+/** Molecule */
 
 const ReviewCard: React.FC<ReviewCardProps> = React.memo(
   ({
@@ -23,10 +26,15 @@ const ReviewCard: React.FC<ReviewCardProps> = React.memo(
           <Text fontWeight='bold'>{shortReviewTitle}</Text>
           <HStack>
             <Icon as={HiStar} color='red' />
-            <Text fontWeight='bold'>{reviewScore}</Text>
+            <Text fontWeight='semibold'>{reviewScore}</Text>
           </HStack>
         </Grid>
         <Text color='gray.600'>{reviewDescription}</Text>
+        <UserDetails
+          name={name}
+          profilePicture={profilePicture}
+          reviewAddedOn={reviewAddedOn}
+        />
       </VStack>
     );
   }

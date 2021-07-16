@@ -22,7 +22,9 @@ const UserDetails: React.FC<UserDetailsProps> = React.memo(
         </Box>
         <Box>
           <Text fontWeight='semibold'>{name}</Text>
-          <Text color='gray.600'>{reviewAddedOn}</Text>
+          <Text color='gray.600' fontSize='sm'>
+            {reviewAddedOn}
+          </Text>
         </Box>
       </Grid>
     );
