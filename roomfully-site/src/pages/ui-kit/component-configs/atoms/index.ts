@@ -3,3 +3,4 @@ export { default as FromPriceOrPricePerNight } from './from-price-or-price-per-n
 export { default as GuestsBedroomsBedsCount } from './guests-bedrooms-beds-count';
 export { default as ReviewsIconWithCountsAndNoOfReviews } from './reviews-icon-with-counts-and-no-of-reviews';
 export { default as MutableIcon } from './mutable-icon';
+export { default as SentimentVisualization } from './sentiment-visualization';
