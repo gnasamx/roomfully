@@ -7,6 +7,7 @@ const theme = extendTheme({
         borderColor: 'gray.200',
         borderBottomWidth: '1.5px',
         borderRadius: 'md',
+        opacity: 1,
       },
     },
   },
