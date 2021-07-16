@@ -6,6 +6,7 @@ import {
   Heading,
   HStack,
   Icon,
+  SimpleGrid,
   Text,
   VStack,
 } from '@chakra-ui/react';
@@ -36,6 +37,7 @@ const ListingDescriptionReviews: React.FC<ListingDescriptionReviewsProps> =
             borderRadius='xl'
             borderWidth={1}
             paddingY={8}
+            templateRows='min-content'
             templateColumns={{
               md: '35% min-content 1fr',
             }}
@@ -71,11 +73,18 @@ const ListingDescriptionReviews: React.FC<ListingDescriptionReviewsProps> =
               ))}
             </VStack>
           </Grid>
-          <VStack spacing={8} alignItems='flex-start'>
+          {/* <VStack spacing={8} alignItems='flex-start'> */}
+          <SimpleGrid
+            columns={[1, 1, 1, 2]}
+            gap={6}
+            alignContent='stretch'
+            gridAutoRows='1fr'
+          >
             {guestsReviews.map((review) => (
               <ReviewCard key={review.shortReviewTitle} {...review} />
             ))}
-          </VStack>
+          </SimpleGrid>
+          {/* </VStack> */}
         </VStack>
       );
     }

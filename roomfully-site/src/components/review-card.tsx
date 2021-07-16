@@ -1,4 +1,4 @@
-import { Grid, HStack, Icon, Text, VStack } from '@chakra-ui/react';
+import { Grid, HStack, Icon, Text } from '@chakra-ui/react';
 import * as React from 'react';
 import { HiStar } from 'react-icons/hi';
 import type { ReviewCardProps } from '../models/review-card';
@@ -16,26 +16,28 @@ const ReviewCard: React.FC<ReviewCardProps> = React.memo(
     shortReviewTitle,
   }) => {
     return (
-      <VStack spacing={4} alignItems='flex-start' width='full'>
+      <Grid gap={3} templateRows='min-content min-content 1fr' width='full'>
         <Grid
           width='full'
           templateRows='1fr'
-          templateColumns={['1fr', '1fr max-content']}
-          gap={1}
+          templateColumns='1fr max-content'
+          gap={2}
+          alignItems='flex-start'
         >
-          <Text fontWeight='bold'>{shortReviewTitle}</Text>
+          <UserDetails
+            name={name}
+            profilePicture={profilePicture}
+            reviewAddedOn={reviewAddedOn}
+          />
           <HStack>
             <Icon as={HiStar} color='red' />
             <Text fontWeight='semibold'>{reviewScore}</Text>
           </HStack>
         </Grid>
+
+        <Text fontWeight='bold'>{shortReviewTitle}</Text>
         <Text color='gray.600'>{reviewDescription}</Text>
-        <UserDetails
-          name={name}
-          profilePicture={profilePicture}
-          reviewAddedOn={reviewAddedOn}
-        />
-      </VStack>
+      </Grid>
     );
   }
 );
