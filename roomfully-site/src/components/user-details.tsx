@@ -24,8 +24,10 @@ const UserDetails: React.FC<UserDetailsProps> = React.memo(
             loading='lazy'
           />
         </Box>
-        <Box>
-          <Text fontWeight='semibold'>{name}</Text>
+        <Box overflow='hidden'>
+          <Text fontWeight='semibold' isTruncated>
+            {name}
+          </Text>
           <Text color='gray.600' fontSize='sm'>
             {reviewAddedOn}
           </Text>

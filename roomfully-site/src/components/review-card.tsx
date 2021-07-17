@@ -34,8 +34,7 @@ const ReviewCard: React.FC<ReviewCardProps> = React.memo(
             <Text fontWeight='semibold'>{reviewScore}</Text>
           </HStack>
         </Grid>
-
-        <Text fontWeight='semibold'>{shortReviewTitle}</Text>
+        <Text fontWeight='medium'>{shortReviewTitle}</Text>
         <Text color='gray.600'>{reviewDescription}</Text>
       </Grid>
     );
