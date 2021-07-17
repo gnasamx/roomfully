@@ -63,7 +63,6 @@ const ListingDescriptionHostedBy: React.FC<ListingDescriptionHostedByProps> =
                 <Link
                   as={ReachLink}
                   to={hostUrl}
-                  fontSize='lg'
                   fontWeight='semibold'
                   isTruncated
                 >
