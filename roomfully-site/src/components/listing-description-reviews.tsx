@@ -5,10 +5,8 @@ import {
   Grid,
   Heading,
   HStack,
-  Icon,
-  SimpleGrid,
-  Text,
-  VStack,
+  Icon, Text,
+  VStack
 } from '@chakra-ui/react';
 import * as React from 'react';
 import { HiStar } from 'react-icons/hi';
@@ -73,18 +71,11 @@ const ListingDescriptionReviews: React.FC<ListingDescriptionReviewsProps> =
               ))}
             </VStack>
           </Grid>
-          {/* <VStack spacing={8} alignItems='flex-start'> */}
-          <SimpleGrid
-            columns={[1, 1, 1, 2]}
-            gap={6}
-            alignContent='stretch'
-            gridAutoRows='1fr'
-          >
+          <VStack spacing={8} alignItems='flex-start'>
             {guestsReviews.map((review) => (
               <ReviewCard key={review.shortReviewTitle} {...review} />
             ))}
-          </SimpleGrid>
-          {/* </VStack> */}
+          </VStack>
         </VStack>
       );
     }
