@@ -15,7 +15,7 @@ const ReviewSentiment: React.FC<ReviewSentimentProps> = React.memo(
         width='full'
       >
         <Box>
-          <Text fontWeight='bold'>{type}</Text>
+          <Text fontWeight='semibold'>{type}</Text>
           <Text color='gray.600'>{category}</Text>
         </Box>
         <VStack alignItems='center'>
