@@ -19,8 +19,7 @@ const UserDetails: React.FC<UserDetailsProps> = React.memo(
             alt={profilePicture.alt}
             borderRadius='md'
             objectFit='cover'
-            width={12}
-            height={12}
+            boxSize={12}
             loading='lazy'
           />
         </Box>

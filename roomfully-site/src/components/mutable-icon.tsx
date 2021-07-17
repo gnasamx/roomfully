@@ -1,11 +1,16 @@
 import { Center, Icon } from '@chakra-ui/react';
 import * as React from 'react';
-import { HiOutlineHome, HiOutlineDocumentReport } from 'react-icons/hi';
 import { BiBed } from 'react-icons/bi';
 import { FiUsers } from 'react-icons/fi';
+import {
+  HiOutlineDocumentReport,
+  HiOutlineGlobe,
+  HiOutlineHome,
+  HiOutlineMail
+} from 'react-icons/hi';
 import type { MutableIconProps } from '../models/mutable-icon';
 
-/** Atom */
+/** Compound */
 
 const getIcon = (mutableIconType: MutableIconProps['mutableIconType']) => {
   switch (mutableIconType) {
@@ -17,6 +22,12 @@ const getIcon = (mutableIconType: MutableIconProps['mutableIconType']) => {
       return FiUsers;
     case 'cancellation-policy':
       return HiOutlineDocumentReport;
+    case 'reviews':
+      return HiOutlineMail;
+    case 'documents':
+      return HiOutlineDocumentReport;
+    case 'languages':
+      return HiOutlineGlobe;
     default:
       break;
   }
@@ -32,12 +43,7 @@ const MutableIcon: React.FC<MutableIconProps> = React.memo(
         borderRadius='md'
         flexShrink={0}
       >
-        <Icon
-          as={getIcon(mutableIconType)}
-          color='gray.500'
-          width={5}
-          height={5}
-        />
+        <Icon as={getIcon(mutableIconType)} color='gray.500' boxSize={5} />
       </Center>
     );
   }
