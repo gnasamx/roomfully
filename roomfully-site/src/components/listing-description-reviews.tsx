@@ -5,7 +5,8 @@ import {
   Grid,
   Heading,
   HStack,
-  Icon, Text,
+  Icon,
+  Text,
   VStack
 } from '@chakra-ui/react';
 import * as React from 'react';
@@ -50,7 +51,7 @@ const ListingDescriptionReviews: React.FC<ListingDescriptionReviewsProps> =
             >
               <Box>
                 <HStack justifyContent='center' alignItems='center'>
-                  <Icon as={HiStar} color='red.500' width={8} height={8} />
+                  <Icon as={HiStar} color='red.500' boxSize={8} />
                   <Heading as='h3' size='xl' fontWeight='extrabold'>
                     {reviewsScorePerMonth}
                   </Heading>

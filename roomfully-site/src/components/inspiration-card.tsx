@@ -26,8 +26,7 @@ const InspirationCard: React.FC<InspirationCardProps> = React.memo(
           <Box flexShrink={0}>
             <Image
               borderRadius='md'
-              width={16}
-              height={16}
+              boxSize={16}
               src={image.src}
               alt={image.alt}
               loading='lazy'

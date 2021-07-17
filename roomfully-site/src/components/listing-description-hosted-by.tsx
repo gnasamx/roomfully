@@ -6,7 +6,7 @@ import {
   Image,
   Link,
   Text,
-  VStack
+  VStack,
 } from '@chakra-ui/react';
 import * as React from 'react';
 import { HiBadgeCheck } from 'react-icons/hi';
@@ -54,8 +54,7 @@ const ListingDescriptionHostedBy: React.FC<ListingDescriptionHostedByProps> =
                 alt={hostProfilePicture.alt}
                 borderRadius='md'
                 objectFit='cover'
-                width={12}
-                height={12}
+                boxSize={12}
                 loading='lazy'
               />
             </Box>

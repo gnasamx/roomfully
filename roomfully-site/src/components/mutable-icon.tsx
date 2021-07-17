@@ -4,7 +4,9 @@ import { BiBed } from 'react-icons/bi';
 import { FiUsers } from 'react-icons/fi';
 import {
   HiOutlineDocumentReport,
-  HiOutlineGlobe, HiOutlineHome, HiOutlineMail
+  HiOutlineGlobe,
+  HiOutlineHome,
+  HiOutlineMail
 } from 'react-icons/hi';
 import type { MutableIconProps } from '../models/mutable-icon';
 
@@ -41,12 +43,7 @@ const MutableIcon: React.FC<MutableIconProps> = React.memo(
         borderRadius='md'
         flexShrink={0}
       >
-        <Icon
-          as={getIcon(mutableIconType)}
-          color='gray.500'
-          width={5}
-          height={5}
-        />
+        <Icon as={getIcon(mutableIconType)} color='gray.500' boxSize={5} />
       </Center>
     );
   }
