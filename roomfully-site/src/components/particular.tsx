@@ -12,7 +12,9 @@ const Particular: React.FC<ParticularProps> = React.memo(
         <MutableIcon mutableIconType={particularType} />
         <Box>
           <Text fontWeight='semibold'>{title}</Text>
-          <Text color='gray.600'>{caption}</Text>
+          <Text fontSize='sm' color='gray.600'>
+            {caption}
+          </Text>
         </Box>
       </HStack>
     );

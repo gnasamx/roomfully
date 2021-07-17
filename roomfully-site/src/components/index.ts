@@ -7,6 +7,7 @@ export { default as InspirationCard } from './inspiration-card';
 export { default as InspirationForYourNextTrip } from './inspiration-for-your-next-trip';
 export { default as ListingCardWithReviewsAndCaption } from './listing-card-with-reviews-and-caption';
 export { default as ListingDescriptionHeader } from './listing-description-header';
+export { default as ListingDescriptionHostedBy } from './listing-description-hosted-by';
 export { default as ListingDescriptionParticulars } from './listing-description-particulars';
 export { default as ListingDescriptionReviews } from './listing-description-reviews';
 export { default as MutableIcon } from './mutable-icon';
